@@ -2,5 +2,5 @@
 def matrix_shape(matrix):
     try:
         return([len(matrix)] + matrix_shape(matrix[0]))
-    except:
+    except ValueError:
         return([])
