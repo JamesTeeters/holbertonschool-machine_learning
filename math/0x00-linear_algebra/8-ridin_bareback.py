@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""text"""
+"""matrix multiply function"""
 
 
 def mat_mul(mat1, mat2):
-    """text"""
+    """matrix multiplication"""
     res = []
     if len(mat1[0]) != len(mat2):
         return None
