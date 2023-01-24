@@ -12,7 +12,7 @@ class Poisson:
 
         if data is not None:
             """check to see if data exists"""
-            if type(data) != type(list):
+            if type(data) != list:
                 """data is not a list"""
                 raise TypeError("data must be a list")
             elif len(data) < 2:
