@@ -17,12 +17,12 @@ class Poisson:
                 raise TypeError("data must be a list")
             elif len(data) < 2:
                 """data is less than 2"""
-                raise ValueError("data must have at least 2 elements")
+                raise ValueError("data must contain multiple values")
         else:
             """data is None"""
             if lambtha <= 0:
                 """lambtha must be greater than 0"""
-                raise ValueError("lambtha must be positive")
+                raise ValueError("lambtha must be a positive value")
             else:
                 """use lambtha as mean number of data points"""
                 data = lambtha
