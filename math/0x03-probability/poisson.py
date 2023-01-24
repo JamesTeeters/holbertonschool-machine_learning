@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Poisson distribution class"""
 
 
 class Poisson:
