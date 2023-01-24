@@ -8,7 +8,7 @@ class Poisson:
         """docstring for Poisson"""
         self.data = data
         """Data = list of data points"""
-        self.lambtha = float(sum(data) / len(data)) if data else lambtha
+        self.lambtha = float(lambtha)
         """lambtha = mean number of data points"""
 
         if data is not None:
@@ -19,6 +19,8 @@ class Poisson:
             elif len(data) < 2:
                 """data is less than 2"""
                 raise ValueError("data must contain multiple values")
+            else:
+                self.lambtha = float(sum(data) / len(data))
         else:
             """data is None"""
             if lambtha <= 0:
