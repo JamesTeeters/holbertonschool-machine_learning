@@ -3,8 +3,9 @@
 
 
 class Exponential:
+    """class for exponential distribution"""
     def __init__(self, data=None, lambtha=1.):
-        """class for exponential distribution"""
+        """define parameters for exponential distribution"""
 
         self.data = data
         """Data = list of data points"""
