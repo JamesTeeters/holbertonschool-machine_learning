@@ -9,8 +9,7 @@ class Poisson:
         self.data = data
         """Data = list of data points"""
         self.lambtha = float(lambtha)
-        """lambtha = mean number of data points"""
-
+        """lambtha = mean number of data points, must be float"""
         if data is not None:
             """check to see if data exists"""
             if type(data) is not list:
@@ -20,6 +19,7 @@ class Poisson:
                 """data is less than 2"""
                 raise ValueError("data must contain multiple values")
             else:
+                """calculate lambtha from data"""
                 self.lambtha = float(sum(data) / len(data))
         else:
             """data is None"""
@@ -29,3 +29,16 @@ class Poisson:
             else:
                 """use lambtha as mean number of data points"""
                 data = lambtha
+
+    def pmf(self, k):
+        """Calculates thes value of the PMF for a given number of successes
+            k = number of successes
+        """
+        """mathmatical constant"""
+        e = 2.7182818285
+        """factorial of k"""
+        fact = 1
+        for i in range(1, k + 1):
+            fact = i * fact
+        """PMF function for poisson distribution"""
+        return ((e ** -self.lambtha) * (self.lambtha ** k)) / fact
