@@ -37,6 +37,9 @@ class Poisson:
         """mathmatical constant"""
         e = 2.7182818285
         k = int(k)
+        if not k:
+            return float(0)
+
         """factorial of k"""
         fact = 1
         for i in range(1, k + 1):
