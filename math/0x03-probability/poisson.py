@@ -38,7 +38,7 @@ class Poisson:
         e = 2.7182818285
         k = int(k)
         if k < 0:
-            return float(0)
+            return 0
 
         """factorial of k"""
         fact = 1
