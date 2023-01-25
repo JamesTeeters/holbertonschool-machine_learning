@@ -36,9 +36,10 @@ class Poisson:
         """
         """mathmatical constant"""
         e = 2.7182818285
+        k = int(k)
         """factorial of k"""
         fact = 1
         for i in range(1, k + 1):
-            fact = i * fact
+            fact = int(i * fact)
         """PMF function for poisson distribution"""
         return ((e ** -self.lambtha) * (self.lambtha ** k)) / fact
