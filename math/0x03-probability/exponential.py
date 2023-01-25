@@ -30,3 +30,15 @@ class Exponential:
             else:
                 """use given lambtha as data value"""
                 data = lambtha
+
+    def pdf(self, x):
+        """Calculates thes value of the PDF for a given number of successes"""
+
+        e = 2.7182818285
+        """ e = mathmatical constant"""
+        """x is time period, must be positive"""
+        if x < 0:
+            return 0
+
+        """PDF function for poisson distribution"""
+        return self.lambtha * (e ** (-self.lambtha * x))
