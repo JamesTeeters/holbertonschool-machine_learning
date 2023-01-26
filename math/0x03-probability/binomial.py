@@ -18,15 +18,19 @@ class Binomial:
         """p is the probability of success"""
 
         if data is None:
-            if n < 0:
+            """check to see if data exists"""
+            if n <= 0:
+                """check to see if stddev is positive"""
                 raise ValueError('n must be a positive value')
-            elif p < 0 or p > 1:
+            if p <= 0 or p >= 1:
                 raise ValueError('p must be greater than 0 and less than 1')
         else:
             if type(data) != list:
-                raise ValueError('data must be a list')
+                """check to see if data is a list"""
+                raise TypeError("data must be a list")
             elif len(data) < 2:
-                raise ValueError('data must contain multiple values')
+                """check to see if data has multiple elements"""
+                raise ValueError("data must contain multiple values")
             else:
                 mean = sum(data) / len(data)
                 """mean is mean of all values"""
