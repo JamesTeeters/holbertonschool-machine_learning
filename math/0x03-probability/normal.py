@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """normal distribution"""
+pi = 3.1415926536
+"""pi is mathmatical constant"""
+e = 2.7182818285
+"""e is mathmatical constant"""
 
 
 class Normal:
@@ -51,10 +55,15 @@ class Normal:
         """Calculates the value of the PDF for a given x-value"""
         self.x = x
         """x is the x-value"""
-        pi = 3.1415926536
-        """pi is mathmatical constant"""
-        e = 2.7182818285
-        """e is mathmatical constant"""
         """return is pdf formula for normal distribution"""
         return ((1 / (self.stddev * ((2 * pi) ** .5))) *
                 (e ** (-.5 * ((x - self.mean) / self.stddev) ** 2)))
+
+    def cdf(self, x):
+        """Calculates the value of the CDF for a given x-value"""
+        return (.5 * (1 + self.er_fun((x - self.mean)
+                / (self.stddev * 2 ** .5))))
+
+    def er_fun(self, x):
+        """Returns the er-function of the given point"""
+        return (2/(pi**.5))*(x-(x**3)/3+(x**5)/10-(x**7)/42+(x**9)/216)
