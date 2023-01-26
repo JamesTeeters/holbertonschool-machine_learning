@@ -46,3 +46,15 @@ class Normal:
         self.z = z
         """z is the z-score"""
         return self.mean + z * self.stddev
+
+    def pdf(self, x):
+        """Calculates the value of the PDF for a given x-value"""
+        self.x = x
+        """x is the x-value"""
+        pi = 3.1415926536
+        """pi is mathmatical constant"""
+        e = 2.7182818285
+        """e is mathmatical constant"""
+        """return is pdf formula for normal distribution"""
+        return ((1 / (self.stddev * ((2 * pi) ** .5))) *
+                (e ** (-.5 * ((x - self.mean) / self.stddev) ** 2)))
