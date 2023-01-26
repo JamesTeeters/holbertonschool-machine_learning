@@ -34,3 +34,15 @@ class Normal:
                     data_sum += (i - self.mean) ** 2
                 """stddev is the square root of the mean of data_sum"""
                 self.stddev = (data_sum / len(data)) ** (1/2)
+
+    def z_score(self, x):
+        """Calculates the z-score of a given x-value"""
+        self.x = x
+        """x is the x-value"""
+        return (self.x - self.mean) / self.stddev
+
+    def x_value(self, z):
+        """Calculates the x-value of a given z-score"""
+        self.z = z
+        """z is the z-score"""
+        return self.mean + z * self.stddev
