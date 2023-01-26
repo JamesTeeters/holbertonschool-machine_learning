@@ -43,3 +43,19 @@ class Binomial:
                 self.p = 1-(mean/stddev)
                 self.n = round(sum(data)/self.p)/len(data)
                 self.p = mean/stddev
+
+    def pmf(self, k):
+        """pmf for binomial distribution"""
+        self.k = k
+        k = int(k)
+        """k is number of success, must be positive integer"""
+        if k < 0:
+            return 0
+
+    def cdf(self, k):
+        """cdf for binomial distribution"""
+        self.k = k
+        k = int(k)
+        """k is number of success, must be positive integer"""
+        if k < 0:
+            return 0
