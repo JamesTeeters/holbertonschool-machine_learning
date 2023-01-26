@@ -42,3 +42,18 @@ class Exponential:
 
         """PDF function for poisson distribution"""
         return self.lambtha * (e ** (-self.lambtha * x))
+
+    def cdf(self, x):
+        """Calculates thes value of the cdf for a given number of successes"""
+        e = 2.7182818285
+        """e = mathmatical constant"""
+        """x is the time period, must be positive"""
+        if x <= 0:
+            return 0
+
+        """cdf function for poisson distribution"""
+        sum = 0
+        """sum of pmf calculations of given success"""
+        for i in range(0, x + 1):
+            sum += self.pdf(i)
+        return sum
