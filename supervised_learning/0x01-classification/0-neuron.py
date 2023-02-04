@@ -16,9 +16,9 @@ class Neuron:
         self.A = 0
         """A = activated output of neuron"""
 
-        if type(self.nx) != int:
+        if type(nx) != int:
             """check if a neuron is an integer"""
-            raise ValueError('nx must be an integer')
+            raise TypeError('nx must be an integer')
         if nx < 1:
             """check if a neuron is positive"""
             raise ValueError('nx must be a positive integer')
