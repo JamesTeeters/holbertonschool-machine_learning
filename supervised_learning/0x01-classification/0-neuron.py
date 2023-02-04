@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-import numpy as np
 """create a class for a neuron"""
+import numpy as np
+
 
 
 class Neuron:
@@ -16,7 +17,7 @@ class Neuron:
         if nx < 1:
             """check if a neuron is positive"""
             raise ValueError('nx must be a positive integer')
-        
+
         self.W = np.random.randn(1, nx)
         """w = weicght vector for neuron"""
         self.b = 0
