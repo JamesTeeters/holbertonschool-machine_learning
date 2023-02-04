@@ -26,9 +26,9 @@ class Neuron:
         """A = activated output of neuron"""
 
         """private instance variables"""
-        self._W = np.random.randn(1, nx)
+        self.__W = np.random.randn(1, nx)
         """w = weicght vector for neuron"""
-        self._b = 0
+        self.__b = 0
         """b = bias"""
-        self._A = 0
+        self.__A = 0
         """A = activated output of neuron"""
