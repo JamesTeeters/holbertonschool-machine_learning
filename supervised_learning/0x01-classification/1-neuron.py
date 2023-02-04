@@ -1,34 +1,37 @@
 #!/usr/bin/env python3
-"""create a class for a neuron"""
+"""Class for neuron"""
 import numpy as np
 
 
 class Neuron:
-    """class for a neuron"""
+    """Class for neuron"""
     def __init__(self, nx):
-        """initialize a neuron"""
-        self.nx = nx
-        """nx = the number of input features to the neuron"""
+        """initialize the neuron"""
+        self.__b = 0
+        """private bias variable"""
+        self.__A = 0
+        """private activated output variable"""
+        self.__W = np.random.randn(1, nx)
+        """private weight variable"""
 
-        if type(self.nx) is not int:
-            """check if a neuron is an integer"""
-            raise TypeError('nx must be an integer')
+        if type(nx) is not int:
+            """check to see if nx is an integer"""
+            raise TypeError('nx must be an interger')
         if nx < 1:
-            """check if a neuron is positive"""
+            """check to see if nx is positive"""
             raise ValueError('nx must be a positive integer')
 
-        """public instance variables"""
-        self.W = self.__W
-        """w = weicght vector for neuron"""
-        self.b = self.__b
-        """b = bias"""
-        self.A = self.__A
-        """A = activated output of neuron"""
+    @property
+    def A(self):
+        """output property getter"""
+        return self.__A
 
-        """private instance variables"""
-        self.__W = np.random.randn(1, nx)
-        """w = weicght vector for neuron"""
-        self.__b = 0
-        """b = bias"""
-        self.__A = 0
-        """A = activated output of neuron"""
+    @property
+    def b(self):
+        """bais property getter"""
+        return self.__b
+
+    @property
+    def W(self):
+        """weight property getter"""
+        return self.__W
