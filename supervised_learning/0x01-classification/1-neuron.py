@@ -18,17 +18,17 @@ class Neuron:
             raise ValueError('nx must be a positive integer')
 
         """public instance variables"""
-        self.W = np.random.randn(1, nx)
+        self.W = self.__W
         """w = weicght vector for neuron"""
-        self.b = 0
+        self.b = self.__b
         """b = bias"""
-        self.A = 0
+        self.A = self.__A
         """A = activated output of neuron"""
 
         """private instance variables"""
-        self.__W = self.W
+        self.__W = np.random.randn(1, nx)
         """w = weicght vector for neuron"""
-        self.__b = self.b
+        self.__b = 0
         """b = bias"""
-        self.__A = self.A
+        self.__A = 0
         """A = activated output of neuron"""
