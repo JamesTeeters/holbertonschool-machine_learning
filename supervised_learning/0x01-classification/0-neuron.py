@@ -3,7 +3,6 @@
 import numpy as np
 
 
-
 class Neuron:
     """class for a neuron"""
     def __init__(self, nx):
