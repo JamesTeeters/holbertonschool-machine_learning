@@ -16,7 +16,7 @@ class Neuron:
         self.A = 0
         """A = activated output of neuron"""
 
-        if type(self.nx) is not int:
+        if type(self.nx) is not float:
             """check if a neuron is an integer"""
             raise ValueError("nx must be an integer")
         if nx < 1:
