@@ -44,10 +44,12 @@ class Neuron:
     def forward_prop(self, X):
         """calculate forward propagation"""
         self.X = X
+        a1 = np.matmul(self.W, X) + self.b
+        """weighted sum of inputs"""
         """
         X is numpy array; shape(nx, m); contains input data
         nx is the number of input factors
         m is the number of examples
         """
-        self.__A = sig(X)
+        self.__A = sig(a1)
         return self.__A
