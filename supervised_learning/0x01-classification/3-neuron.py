@@ -8,11 +8,6 @@ def sig(x):
     return (1 / (1 + np.exp(-x)))
 
 
-def MSE(true, pred):
-    """Mean Squared Error function"""
-    return np.square(np.subtract(true, pred)).mean()
-
-
 class Neuron:
     """Class for neuron"""
     def __init__(self, nx):
@@ -61,4 +56,5 @@ class Neuron:
 
     def cost(self, Y, A):
         """Cost function"""
-        return MSE(Y, A)
+        m = self.X.shape[1]
+        return -(1/m)*(np.sum((Y*np.log(A))+(1-Y)*np.log(1.0000001 - A)))
