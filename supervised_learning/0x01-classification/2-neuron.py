@@ -49,5 +49,5 @@ class Neuron:
         nx is the number of input factors
         m is the number of examples
         """
-        self.__A = sig(self.W)
+        self.__A = sig(X)
         return self.__A
