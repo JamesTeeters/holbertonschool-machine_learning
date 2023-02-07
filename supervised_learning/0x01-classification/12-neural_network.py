@@ -75,10 +75,10 @@ class NeuralNetwork:
     def cost(self, Y, A):
         """cost function for neural network"""
         return np.sum(-(Y*np.log(A)+(1-Y)*np.log(1.0000001 - A)))/Y.shape[1]
-
+    
     def evaluate(self, X, Y):
         """Evaluates the neural network's predictions"""
         A1, A2 = self.forward_prop(X)
         C = self.cost(Y, A2)
         vector = np.vectorize(np.int_)
-        return (vector(A2), C)
+        return (vector(A2.round()), C)
