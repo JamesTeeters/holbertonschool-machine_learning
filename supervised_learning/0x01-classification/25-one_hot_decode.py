@@ -15,6 +15,6 @@ def one_hot_decode(one_hot):
             for j in range(classes):
                 if one_hot[j][i] == 1:
                     vector[i] = j
-        return int(vector)
+        return vector.astype(int)
     except Exception:
         return None
