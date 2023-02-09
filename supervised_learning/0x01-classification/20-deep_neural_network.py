@@ -74,6 +74,6 @@ class DeepNeuralNetwork:
     def evaluate(self, X, Y):
         """Evaluates the neural network's predictions"""
         A1, A2 = self.forward_prop(X)
-        C = self.cost(Y, A2)
+        C = self.cost(Y, A1)
         vector = np.vectorize(np.int_)
         return (vector(A1.round()), C)
