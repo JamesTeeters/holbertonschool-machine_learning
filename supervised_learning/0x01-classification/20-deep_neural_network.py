@@ -76,4 +76,4 @@ class DeepNeuralNetwork:
         A1, A2 = self.forward_prop(X)
         C = self.cost(Y, A2)
         vector = np.vectorize(np.int_)
-        return (vector(A2.round()), C)
+        return (vector(A1.round()), C)
