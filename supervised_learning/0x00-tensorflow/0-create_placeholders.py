@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
+"""create placeholder in tesorflow"""
+import tensorflow as tf
 
-import tensorflow.compat.v1 as tf
-
-tf.compat.v1.disable_eager_execution()
 
 def create_placeholders(nx, classes):
-
+    """create placeholders"""
     x = tf.placeholder(tf.float32, [None, nx], name="x")
     y = tf.placeholder(tf.float32, [None, classes], name="y")
 
