@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """create placeholder in tesorflow"""
 import tensorflow as tf
+create_layer = __import__('1-create_layer').create_layer
 
 
 def create_placeholders(nx, classes):
